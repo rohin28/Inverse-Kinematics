@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='ASCII'?>
+<library path="lib/libfive_dof_arm_kinematics_moveit">
+  <class type="five_dof_arm_kinematics_moveit::KinematicsPlugin"
+      base_class_type="kinematics::KinematicsBase">
+    <description>
+      MoveIt! kinematics plugin for the arm of the KUKA five_dof.
+    </description>
+  </class>
+</library>

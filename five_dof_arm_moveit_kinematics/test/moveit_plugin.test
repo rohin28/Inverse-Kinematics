@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <param name="/robot_description" type="str"
+        textfile="$(find five_dof_arm_kinematics_moveit)/ros/test/five_dof_arm.urdf"
+    />
+
+    <test test-name="five_dof_arm_kinematics_moveit_test"
+        pkg="five_dof_arm_kinematics_moveit"
+        type="five_dof_arm_kinematics_moveit_test" />
+
+</launch>
