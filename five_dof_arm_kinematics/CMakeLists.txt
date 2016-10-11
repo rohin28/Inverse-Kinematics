@@ -1,0 +1,76 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(five_dof_arm_kinematics)
+
+find_package(catkin REQUIRED COMPONENTS            
+             cmake_modules
+             geometry_msgs
+             kdl_conversions
+)
+
+find_package(Eigen REQUIRED)
+find_package(catkin REQUIRED)
+find_package(orocos_kdl REQUIRED)
+find_package(cmake_modules REQUIRED)
+
+
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES five_dof_arm_kinematics
+            ik_utils
+  DEPENDS
+    orocos_kdl
+    kdl_conversions
+)
+
+include_directories(${Eigen_INCLUDE_DIRS})
+include_directories(
+  include
+  ${orocos_kdl_INCLUDE_DIRS}
+)
+
+add_library(five_dof_arm_kinematics
+  src/inverse_kinematics.cpp
+  src/logger.cpp
+)
+
+target_link_libraries(five_dof_arm_kinematics
+  ${catkin_LIBRARIES}
+  ${orocos_kdl_LIBRARIES}
+)
+
+install(TARGETS five_dof_arm_kinematics
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+add_library(ik_utils
+  src/ik_utils.cpp
+)
+
+target_link_libraries(ik_utils
+  ${catkin_LIBRARIES}
+  ${orocos_kdl_LIBRARIES}
+)
+
+install(TARGETS ik_utils
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+##add_executable(inverse_kinematics src/inverse_kinematics.cpp)
+##target_link_libraries(inverse_kinematics ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${orocos_kdl_LIBRARIES})
+##install(TARGETS inverse_kinematics DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+add_executable(test_kdl src/test_kdl.cpp)
+target_link_libraries(test_kdl ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${orocos_kdl_LIBRARIES})
+install(TARGETS test_kdl DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+)

@@ -1,0 +1,22 @@
+/*
+ * test_kdl.cpp
+ *
+ *  Created on: 01-Sep-2016
+ *      Author: rohin
+ */
+
+
+#include <kdl/jntarray.hpp>
+#include <kdl/chain.hpp>
+#include <stdio.h>
+#include <iostream>
+
+
+int main()
+{
+	KDL::Chain chain;
+        std::cout << "Hello" << endl ;
+	return 0 ;
+
+}
+
