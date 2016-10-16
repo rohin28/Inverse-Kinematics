@@ -1,0 +1,63 @@
+<package>
+
+  <name>fived_moveit</name>
+  <version>0.2.0</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the description with the MoveIt Motion Planning Framework
+  </description>
+  <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
+  <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://moveit.ros.org/</url>
+  <url type="bugtracker">https://github.com/ros-planning/moveit_setup_assistant/issues</url>
+  <url type="repository">https://github.com/ros-planning/moveit_setup_assistant</url>
+
+  <run_depend>moveit_core</run_depend>
+  <run_depend>moveit_ros_planning</run_depend>
+  <run_depend>moveit_ros_planning_interface</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>geometric_shapes</run_depend>
+  <run_depend>interactive_markers</run_depend>
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>bot_arm</run_depend>
+  <run_depend>moveit_simple_controller_manager</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>industrial_robot_simulator</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>joint_trajectory_action</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>shape_msgs</run_depend>
+  <run_depend>five_dof_arm_kinematics</run_depend>
+
+  <build_depend>shape_msgs</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>moveit_core</build_depend>
+  <build_depend>moveit_ros_planning_interface</build_depend>
+  <build_depend>moveit_ros_perception</build_depend>
+  <build_depend>interactive_markers</build_depend>
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>geometric_shapes</build_depend>
+  <build_depend>moveit_simple_controller_manager</build_depend>
+  <build_depend>joint_trajectory_controller</build_depend>
+  <build_depend>bot_arm</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>trajectory_msgs</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>joint_trajectory_action</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>

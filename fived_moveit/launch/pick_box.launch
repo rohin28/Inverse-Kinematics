@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/demo.launch"/>
+  <node name="pick_box" pkg="fived_moveit" type="pick_box" respawn="false" output="screen">
+  </node>
+
+</launch>
+

@@ -1,0 +1,18 @@
+<launch>
+
+  <group ns="five_dof">
+
+    <!-- Load hardware interface -->
+    <node name="fived_hardware_interface" pkg="fived_hardware" type="fived_hw_main"
+          output="screen" />
+
+    <!-- Load controller settings -->
+    <rosparam file="$(find fived_hardware)/config/hardware_controllers.yaml" command="load"/>
+
+    <!-- Load controller manager -->
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false"
+	  output="screen" args="spawn position_trajectory_controller joint_state_controller" />
+
+  </group>
+
+</launch>

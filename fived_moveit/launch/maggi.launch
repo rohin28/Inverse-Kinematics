@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/final_control.launch"/>
+  <node name="maggi" pkg="fived_moveit" type="maggi" respawn="false" output="screen">
+  </node>
+
+</launch>
+

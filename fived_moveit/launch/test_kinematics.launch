@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/demo.launch"/>
+  <node name="test_kinematics" pkg="fived_moveit" type="test_kinematics" respawn="false" output="screen">
+  </node>
+
+</launch>
+

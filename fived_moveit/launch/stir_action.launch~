@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/demo.launch"/>
+  <node name="stir_action" pkg="fived_moveit" type="stir_action" respawn="false" output="screen" launch-prefix="xterm -e gdb --args">
+  </node>
+
+</launch>
+

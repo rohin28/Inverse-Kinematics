@@ -1,0 +1,333 @@
+<robot
+  name="five_dof">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.718344795197391" />
+      <inertia
+        ixx="0.00272700103043121"
+        ixy="8.12077533335742E-35"
+        ixz="4.18350543794516E-19"
+        iyy="0.0027270010304312"
+        iyz="-1.00492647903297E-35"
+        izz="0.00449649437672456" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.995589899656939" />
+      <inertia
+        ixx="0.00773827265273582"
+        ixy="-3.96163317360492E-20"
+        ixz="3.60771308647399E-19"
+        iyy="0.0206411399272416"
+        iyz="-6.09550719073123E-20"
+        izz="0.0129873645793082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.570796 0 1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.570796 0 1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.1455"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="2"
+      velocity="0.03" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0625646003293849" />
+      <inertia
+        ixx="0.000199617532158759"
+        ixy="1.57210365032874E-19"
+        ixz="1.75236458494176E-20"
+        iyy="0.000277804415808805"
+        iyz="-5.48524335607533E-20"
+        izz="0.000463316673796461" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0375"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0.72"
+      upper="2.42"
+      effort="2"
+      velocity="0.03" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0613079632679489" />
+      <inertia
+        ixx="0.000194034032210468"
+        ixy="1.44422879736118E-19"
+        ixz="3.26604718320211E-21"
+        iyy="0.00017906448883636"
+        iyz="2.35137097172607E-20"
+        izz="0.000359003299972217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.152 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="2"
+      velocity="0.03" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.061409501429103" />
+      <inertia
+        ixx="8.35392002721132E-05"
+        ixy="-1.19810313884484E-19"
+        ixz="-1.24592318331321E-18"
+        iyy="0.000188758404783979"
+        iyz="1.60532938483512E-20"
+        izz="0.000258460264044084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.01 0"
+        rpy="0 0 -3.141592" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 -0.01 0"
+        rpy="0 0 -3.141592" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.152 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-2.5"
+      upper="2.5"
+      effort="2"
+      velocity="0.03" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00788539756051039" />
+      <inertia
+        ixx="8.26817694867261E-07"
+        ixy="-1.4844091825431E-24"
+        ixz="1.7705213299822E-25"
+        iyy="3.15965681134794E-07"
+        iyz="-1.29538561575541E-23"
+        izz="8.33100880174441E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796" />
+      <geometry>
+        <mesh
+          filename="package://five_dof/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.14825 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="2"
+      velocity="0.03" />
+  </joint>
+</robot>

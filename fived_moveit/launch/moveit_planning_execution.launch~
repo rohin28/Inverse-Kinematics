@@ -1,0 +1,37 @@
+<launch>
+
+  <rosparam command="load" file="$(find fived_moveit)/config/joint_names.yaml"/> -->
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/five_dof/joint_states]</rosparam>
+    <rosparam>
+      zeros:
+        joint1: 0.0
+        joint2: 1.57
+        joint3: 0.0
+        joint4: 0.0
+        joint5: 0.0
+    </rosparam>
+  </node>
+
+  <!-- Convert joint states to /tf tranforms -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <include file="$(find fived_moveit)/launch/planning_context.launch" >
+       <arg name="load_robot_description" value="true" />
+  </include> 
+
+  <include file="$(find fived_moveit)/launch/move_group.launch">
+     <arg name="publish_monitored_planning_scene" value="true" />
+     <arg name="allow_trajectory_execution" value="true"/>
+  </include>
+   
+  <include file="$(find twod_moveit)/launch/moveit_rviz.launch">
+       <arg name="config" value="true"/>
+  </include>
+     
+  <include file="$(find moveit)/launch/default_warehouse_db.launch" />
+
+
+</launch>

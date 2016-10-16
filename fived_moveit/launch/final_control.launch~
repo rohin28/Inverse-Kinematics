@@ -1,0 +1,13 @@
+<launch>
+
+ <!-- node name="action_server" pkg="moveit" type="action_server" respawn="false" output="screen" -->
+ <!-- /node -->  
+
+ <include file="$(find fived_moveit)/launch/moveit_planning_execution.launch"/>
+
+ <include file="$(find fived_hardware)/launch/hardware_interface.launch"/>
+
+ <node name="msp_serial_port" pkg="serial_port2" type="msp.py" output="screen">
+ </node> 
+
+</launch>

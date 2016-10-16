@@ -1,0 +1,61 @@
+# Settings for ros_control control loop
+fived_hw_control_loop:
+  loop_hz: 4
+  cycle_time_error_threshold: 0.5
+
+# Settings for ros_control hardware interface
+fived_hw_interface:
+   joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+
+# Joint Trajectory Controller -------------------------------
+position_trajectory_controller:
+   type: position_controllers/JointTrajectoryController
+   joints:     
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+
+   gains:
+     joint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+     joint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+     joint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
+     joint4: {p: 100,  d: 1, i: 1, i_clamp: 1}
+     joint5: {p: 100,  d: 1, i: 1, i_clamp: 1}
+
+   constraints:
+    goal_time: 100                   
+    stopped_velocity_tolerance: 50 
+    joint1:
+      trajectory: 50              
+      goal: 50  
+    joint2:
+      trajectory: 50              
+      goal: 50
+    joint3:
+      trajectory: 50              
+      goal: 50  
+    joint4:
+      trajectory: 50              
+      goal: 50
+    joint1:
+      goal: 50
+    joint2:
+      goal: 50     
+    joint3:
+      goal: 50
+    joint4:
+      goal: 50 
+    joint5:
+      goal: 50                   
+               
+# Publish all joint states ----------------------------------
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+   type:         joint_state_controller/JointStateController
+   publish_rate: 50

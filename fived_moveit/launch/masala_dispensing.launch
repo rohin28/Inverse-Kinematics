@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/demo.launch"/>
+  <node name="masala_dispensing" pkg="fived_moveit" type="masala_dispensing" respawn="false" output="screen">
+  </node>
+
+</launch>
+

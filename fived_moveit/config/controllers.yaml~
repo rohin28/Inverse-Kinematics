@@ -1,0 +1,29 @@
+controller_list:
+ - name: /five_dof/position_trajectory_controller
+   action_ns: follow_joint_trajectory
+   type: FollowJointTrajectory
+   default: true
+   joints:
+     - joint1
+     - joint2
+     - joint3
+     - joint4
+     - joint5
+   constraints:
+    goal_time: 20                   
+    stopped_velocity_tolerance: 0.001
+    joint1:
+      trajectory: 0.001              
+      goal: 0.001
+    joint2:
+      trajectory: 0.001              
+      goal: 0.001                 
+    joint3:
+      trajectory: 0.001             
+      goal: 0.001
+    joint4:
+      trajectory: 0.001              
+      goal: 0.001  
+    joint5:
+      trajectory: 0.001              
+      goal: 0.001           

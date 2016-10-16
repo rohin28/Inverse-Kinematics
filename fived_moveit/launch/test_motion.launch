@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find fived_moveit)/launch/final_control.launch"/>
+  <node name="test_motion" pkg="fived_moveit" type="test_motion" respawn="false" output="screen">
+  </node>
+
+</launch>
+
